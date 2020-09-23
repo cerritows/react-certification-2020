@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import CardHeader from './CardHeader.component';
 
@@ -11,8 +12,8 @@ const StyledCard = styled.div`
   position: relative;
   //flex: 1 0 21%;
   // height: 350px;
-  width: 300px;
-  min-width: 250px;
+  width: 350px;
+  min-width: 300px;
   padding: 1.5rem;
   margin: 0.5rem;
 
@@ -30,11 +31,13 @@ const StyledCard = styled.div`
 function Card({ element }) {
   return (
     <StyledCard>
-      <img
-        src={element.snippet.thumbnails.medium.url}
-        width={element.snippet.thumbnails.medium.width}
-        alt="Video thumbnail"
-      />
+      <Link to={`/video/${element.id.videoId}`}>
+        <img
+          src={element.snippet.thumbnails.medium.url}
+          width={element.snippet.thumbnails.medium.width}
+          alt="Video thumbnail"
+        />
+      </Link>
 
       <CardHeader>{htmlEntities.decode(element.snippet.title)}</CardHeader>
     </StyledCard>
