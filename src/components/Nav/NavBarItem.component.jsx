@@ -9,7 +9,7 @@ const NavItem = styled.div`
 
   height: 90%;
 
-  color: purple;
+  color: ${(props) => props.theme.primaryColor};
   text-transform: uppercase;
   font-size: 20px;
 
@@ -28,17 +28,17 @@ const NavItem = styled.div`
   }
 
   & button:hover {
-    background-color: #f1e6f2;
+    background-color: ${(props) => props.theme.secondaryColor};
   }
 
   &:hover {
-    background-color: #f1e6f2;
+    background-color: ${(props) => props.theme.secondaryColor};
     cursor: pointer;
   }
 
   &:hover a {
-    color: purple;
-    background-color: #f1e6f2;
+    color: ${(props) => props.theme.primaryColor};
+    background-color: ${(props) => props.theme.secondaryColor};
   }
 `;
 

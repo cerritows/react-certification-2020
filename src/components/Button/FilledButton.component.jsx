@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 const FilledButton = styled.button`
   color: white;
-  border: 1px solid #f1e6f2;
+  border: 1px solid ${(props) => props.theme.primaryColor};
   font-size: 14px;
-  background-color: #580266;
+  background-color: ${(props) => props.theme.primaryColor};
   font-family: inherit;
   cursor: pointer;
   height: 2rem;
@@ -12,11 +12,12 @@ const FilledButton = styled.button`
   padding: 0.5rem 1rem;
   margin: 5px;
   width: 100%;
+  justify-content: center;
 
   &:hover {
-    background-color: #f1e6f2;
-    border: 1px solid #580266;
-    color: #580266;
+    background-color: ${(props) => props.theme.primaryColor};
+    border: 1px solid ${(props) => props.theme.primaryColor};
+    color: ${(props) => props.theme.primaryColor};
   }
 `;
 

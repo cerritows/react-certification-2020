@@ -22,11 +22,11 @@ const InputWrapper = styled.section`
   align-items: center;
   height: 2rem;
   border-radius: 5px;
-  border: 1px solid #f1e6f2;
+  border: 1px solid ${(props) => props.theme.secondaryColor};
   min-width: 50%;
   background-color: white;
   padding: 5px;
-  margin: 5px 0;
+  margin: 5px;
 
   &:active,
   :focus {

@@ -47,21 +47,6 @@ function TopBar() {
           </Link>
         </NavBarItem>
       )}
-
-      {/* // <NavBarItem align="right" onClick={logout}>
-      //   {authenticated 
-          
-      //       <LabeledIcon Icon={Home} size="23" label="Home" />
-      //     </a>
-      //     : <Link to="/login">Log in</Link>
-      //   }
-      // </NavBarItem>
-
-      // {authenticated && (
-      //   <NavBarItem align="right">
-      //     <Link to="/favorites">Favorites</Link>
-      //   </NavBarItem>
-      // )} */}
     </NavBar>
   );
 }

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import * as Icons from '@styled-icons/material-rounded';
 
 const StyledIcon = styled.span`
-  color: ${(props) => props.color || 'inherit'};
+  color: ${(props) => props.color || props.theme.primaryColor};
   display: inline-flex;
   align-items: center;
 `;

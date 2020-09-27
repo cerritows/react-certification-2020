@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const BorderlessButton = styled.button`
-  color: #580266;
+  color: ${(props) => props.theme.primaryColor};
   border: none;
   font-size: 14px;
   background-color: inherit;
@@ -10,7 +10,7 @@ const BorderlessButton = styled.button`
   height: 2rem;
 
   &:hover {
-    background-color: #f1e6f2;
+    background-color: ${(props) => props.theme.secondaryColor};
   }
 `;
 

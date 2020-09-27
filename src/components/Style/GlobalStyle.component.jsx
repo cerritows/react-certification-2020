@@ -4,10 +4,10 @@ const GlobalStyle = createGlobalStyle`
     body {
         font-family: 'Roboto', sans-serif;
         height: 100%;
-        background-color: #eae8eb;
+        background-color: ${(props) => props.theme.backgroundColor};
 
         & h1, h2, h3, h4, h5, h6 {
-            color: #580266;
+            color: ${(props) => props.theme.primaryColor};
             font-weight: 200;
             text-transform: uppercase;
         }

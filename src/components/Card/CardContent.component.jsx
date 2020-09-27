@@ -5,6 +5,7 @@ const CardContent = styled.div`
   flex-direction: ${(props) => props.theme.cardDirection};
   position: relative;
   width: 100%;
+  text-align: left;
 `;
 
 export default CardContent;

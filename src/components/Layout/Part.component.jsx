@@ -4,7 +4,7 @@ const StyledPart = styled.div`
   width: ${(props) => (parseInt(props.bg, 10) * 100) / 12}%;
   padding: 5px;
   margin: 5px;
-  text-align: ${(props) => props.align || 'inherit'};
+  text-align: ${(props) => props.align};
 
   @media (max-width: 1280px) {
     width: ${(props) => (parseInt(props.md, 10) * 100) / 12}%;
