@@ -13,7 +13,7 @@ function useTheme() {
 }
 
 function CustomThemeProvider({ children }) {
-  const [theme, setTheme] = useState('purpleTheme');
+  const [theme, setTheme] = useState('defaultTheme');
 
   return (
     <ThemeContext.Provider value={setTheme}>

@@ -23,11 +23,7 @@ function ThemeSelector() {
       <InputLabel size="0.75rem">Theme</InputLabel>
       <Select onChange={changeTheme}>
         {Object.keys(ThemeCatalog).map((theme) => (
-          <Option
-            key={ThemeCatalog[theme].id}
-            label={ThemeCatalog[theme].displayName}
-            value={ThemeCatalog[theme].id}
-          />
+          <Option key={theme} label={ThemeCatalog[theme].displayName} value={theme} />
         ))}
       </Select>
     </Container>

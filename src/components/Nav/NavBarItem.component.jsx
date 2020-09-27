@@ -21,6 +21,7 @@ const NavItem = styled.div`
   }
 
   & button {
+    text-transform: uppercase;
     padding: 0.25rem 0.75rem;
     color: inherit;
     font-size: inherit;
