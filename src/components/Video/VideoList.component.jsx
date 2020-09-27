@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { CardList, Card, CardHeader, CardFooter, CardBody, CardContent } from '../Card';
 import { FavoriteToggle } from '../Favorites';
 import htmlEntities from '../../utils/entities';
-import withLoader from '../Loader.component';
+import withLoader from '../Loader';
 
 function VideoList({ data, direction }) {
   return (

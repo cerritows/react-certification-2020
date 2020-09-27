@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import withLoader from '../Loader.component';
+import withLoader from '../Loader';
 
 const VideoContainer = styled.div`
   width: 100%;
