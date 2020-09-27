@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { CardList, Card, CardHeader, CardFooter, CardBody, CardContent } from '../Card';
-import LikeHandler from '../LikeHandler.component';
+import { FavoriteToggle } from '../Favorites';
 import htmlEntities from '../../utils/entities';
 import withLoader from '../Loader.component';
 
@@ -21,7 +21,7 @@ function VideoList({ data, direction }) {
                 <CardHeader>{htmlEntities.decode(element.snippet.title)}</CardHeader>
               </CardContent>
               <CardFooter>
-                <LikeHandler id={videoId} />
+                <FavoriteToggle id={videoId} />
               </CardFooter>
             </CardBody>
           </Card>
