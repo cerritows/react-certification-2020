@@ -11,22 +11,20 @@ function SearchBar({ setSearchTerms }) {
 
   return (
     <Container direction="row" align="center">
-      <TextInput>
-        <Icon name="Search" size="2rem" />
-      </TextInput>
-      {/* <IconInput
-        type="text"
+      <TextInput
         value={searchTerms}
         onChange={(e) => {
+          console.log('Local search', e.target.value);
           setLocalSearchTerms(e.target.value);
         }}
-        Icon={IconWrapper(Search)}
-      /> */}
+      >
+        <Icon name="Search" size="2rem" />
+      </TextInput>
       <FilledButton
         type="submit"
         onClick={() => {
+          console.log('Search terms', searchTerms);
           setSearchTerms(searchTerms);
-          setLocalSearchTerms('');
         }}
         outlined
       >
