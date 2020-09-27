@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import SearchBar from '../../components/SearchBar.component';
-import useVideoAPI from '../../providers/Video';
+import SearchBar from '../../components/Search';
+import { useVideoAPI } from '../../utils/hooks';
 
-import CardList from '../../components/Card/CardList.component';
+import { VideoList } from '../../components/Video';
+import Container from '../../components/Layout';
 
 function HomePage() {
   const [searchTerms, setSearchTerms] = useState('');
@@ -10,10 +11,10 @@ function HomePage() {
   const { isLoading, data } = useVideoAPI('searchVideos', searchTerms);
 
   return (
-    <div>
+    <Container direction="column" align="center">
       <SearchBar setSearchTerms={setSearchTerms} />
-      <CardList isLoading={isLoading} data={data} />
-    </div>
+      <VideoList isLoading={isLoading} data={data} direction="horizontal" />
+    </Container>
   );
 }
 
