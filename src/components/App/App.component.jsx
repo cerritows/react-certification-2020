@@ -12,7 +12,7 @@ import LoginPage from '../../pages/Login';
 import FavoritesPage from '../../pages/Favorites';
 import NotFound from '../../pages/NotFound';
 
-import GlobalStyle, { ThemeSelector } from '../Style';
+import GlobalStyle from '../Style';
 
 import TopBar from '../TopBar';
 
@@ -24,7 +24,7 @@ function App() {
           <CustomThemeProvider>
             <GlobalStyle />
             <TopBar />
-            <ThemeSelector />
+
             <Switch>
               <Route exact path="/" component={HomePage} />
               <Route exact path="/video/:id" component={VideoPage} />

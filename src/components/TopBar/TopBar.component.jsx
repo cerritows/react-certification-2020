@@ -5,6 +5,7 @@ import { useAuth } from '../../providers/Auth';
 import { BorderlessButton } from '../Button';
 
 import { LabeledIcon, IconLabel, Icon } from '../Icon';
+import { ThemeSelector } from '../Style';
 
 function TopBar() {
   const { authenticated, logout } = useAuth();
@@ -21,6 +22,10 @@ function TopBar() {
         <Link to="/">
           <LabeledIcon name="Home" size="24" label="Home" />{' '}
         </Link>
+      </NavBarItem>
+
+      <NavBarItem>
+        <ThemeSelector align="center" />
       </NavBarItem>
 
       {authenticated ? (

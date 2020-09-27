@@ -5,35 +5,30 @@ const NavItem = styled.div`
   align-items: center;
   float: ${(props) => props.align};
 
-  padding: 0.25rem 0.75rem;
-
-  height: 90%;
-
-  color: ${(props) => props.theme.primaryColor};
   text-transform: uppercase;
   font-size: 20px;
+  height: 100%;
+  margin: 0 0.25rem;
 
   & a {
+    padding: 0.25rem 0.75rem;
     color: inherit;
+    height: 90%;
     text-decoration: None;
+    display: inline-flex;
+    align-items: center;
+    color: ${(props) => props.theme.primaryColor};
   }
 
   & button {
-    text-transform: inherit;
+    padding: 0.25rem 0.75rem;
     color: inherit;
     font-size: inherit;
-    height: 90%;
-    margin: 0;
-    padding: 0;
+    height: 100%;
   }
 
   & button:hover {
     background-color: ${(props) => props.theme.secondaryColor};
-  }
-
-  &:hover {
-    background-color: ${(props) => props.theme.secondaryColor};
-    cursor: pointer;
   }
 
   &:hover a {

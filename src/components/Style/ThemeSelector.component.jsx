@@ -1,36 +1,36 @@
 import React from 'react';
+import styled from 'styled-components';
 import ThemeCatalog from '../../utils/ThemeCatalog';
 
 import { useTheme } from '../../providers/Theme/ThemeName.provider';
 
+import { Select, Option, InputLabel } from '../Input';
+
+const Container = styled.div`
+  border-left: 1px solid ${(props) => props.theme.backgroundColor};
+  padding-left: 10px;
+`;
+
 function ThemeSelector() {
   const setTheme = useTheme();
-  console.log('Themes: s :', setTheme);
 
   const changeTheme = (e) => {
-    console.log('Change theme');
     setTheme(e.target.value);
   };
 
   return (
-    <div>
-      {Object.keys(ThemeCatalog).map((theme) => {
-        return (
-          <span key={ThemeCatalog[theme].id}>
-            <input
-              type="radio"
-              id={ThemeCatalog[theme].id}
-              name="theme"
-              value={ThemeCatalog[theme].id}
-              onClick={changeTheme}
-            />
-            <label htmlFor={ThemeCatalog[theme].id}>
-              {ThemeCatalog[theme].displayName}
-            </label>
-          </span>
-        );
-      })}
-    </div>
+    <Container direction="column" align="flex-start">
+      <InputLabel size="0.75rem">Theme</InputLabel>
+      <Select onChange={changeTheme}>
+        {Object.keys(ThemeCatalog).map((theme) => (
+          <Option
+            key={ThemeCatalog[theme].id}
+            label={ThemeCatalog[theme].displayName}
+            value={ThemeCatalog[theme].id}
+          />
+        ))}
+      </Select>
+    </Container>
   );
 }
 
