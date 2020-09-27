@@ -11,6 +11,7 @@ const FilledButton = styled.button`
   border-radius: 5px;
   padding: 0.5rem 1rem;
   margin: 5px;
+  width: 100%;
 
   &:hover {
     background-color: #f1e6f2;

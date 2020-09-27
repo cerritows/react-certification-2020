@@ -4,6 +4,7 @@ const StyledPart = styled.div`
   width: ${(props) => (parseInt(props.bg, 10) * 100) / 12}%;
   padding: 5px;
   margin: 5px;
+  text-align: ${(props) => props.align || 'inherit'};
 
   border-top: ${(props) => (props.top ? '1px solid gray' : 0)};
   border-bottom: ${(props) => (props.bottom ? '1px solid gray' : 0)};
