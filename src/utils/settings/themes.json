@@ -1,0 +1,26 @@
+{
+  "blueTheme": {
+    "displayName": "Blue",
+    "theme": {
+      "primaryColor": "#0ab8f7",
+      "secondaryColor": "#b7dbe8",
+      "backgroundColor": "#dde9ed"
+    }
+  },
+  "greenTheme": {
+    "displayName": "Green",
+    "theme": {
+      "primaryColor": "#236613",
+      "secondaryColor": "#99e887",
+      "backgroundColor": "#e0eddd"
+    }
+  },
+  "orangeTheme" : {
+    "displayName": "Orange",
+    "theme": {
+      "primaryColor": "#f09e11",
+      "secondaryColor": "#f5d7a4",
+      "backgroundColor": "#f5e7d0"
+    }
+  }
+}
