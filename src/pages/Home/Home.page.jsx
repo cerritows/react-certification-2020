@@ -3,7 +3,7 @@ import SearchBar from '../../components/Search';
 import { useVideoAPI } from '../../utils/hooks';
 
 import { VideoList } from '../../components/Video';
-import Container from '../../components/Layout';
+import Container, { Part } from '../../components/Layout';
 
 function HomePage() {
   const [searchTerms, setSearchTerms] = useState('');
@@ -11,9 +11,13 @@ function HomePage() {
   const { isLoading, data } = useVideoAPI('searchVideos', searchTerms);
 
   return (
-    <Container direction="column" align="center">
-      <SearchBar setSearchTerms={setSearchTerms} />
-      <VideoList isLoading={isLoading} data={data} direction="horizontal" />
+    <Container align="center" direction="column">
+      <Part align="center" bg="8" md="10">
+        <SearchBar setSearchTerms={setSearchTerms} />
+      </Part>
+      <Part align="center" bg="8" md="10">
+        <VideoList isLoading={isLoading} data={data} direction="horizontal" />
+      </Part>
     </Container>
   );
 }
