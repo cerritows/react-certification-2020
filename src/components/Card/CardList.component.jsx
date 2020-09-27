@@ -5,7 +5,7 @@ const StyledCardList = styled.div`
   display: flex;
   flex-wrap: wrap;
   flex-direction: ${(props) => props.theme.listDirection};
-  padding: 3rem;
+  // padding: 3rem;
   align-items: ${(props) => props.theme.alignItems};
   justify-content: stretch;
 
