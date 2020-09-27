@@ -12,10 +12,10 @@ function HomePage() {
 
   return (
     <Container align="center" direction="column">
-      <Part align="center" bg="8" md="10">
+      <Part align="center" bg="8" md="10" sm="12">
         <SearchBar setSearchTerms={setSearchTerms} />
       </Part>
-      <Part align="center" bg="8" md="10">
+      <Part align="center" bg="8" md="10" sm="12">
         <VideoList isLoading={isLoading} data={data} direction="horizontal" />
       </Part>
     </Container>

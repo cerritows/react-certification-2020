@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import { useVideoAPI } from '../../utils/hooks';
 
 import { VideoDisplay, VideoList } from '../../components/Video';
-
 import Container, { Part, Divider } from '../../components/Layout';
 
 function VideoPage() {
@@ -15,9 +14,9 @@ function VideoPage() {
     <Container direction="row">
       <Part bg="6" md="10">
         <VideoDisplay isLoading={videoDetails.isLoading} data={videoDetails.data} />
-        <Divider />
       </Part>
-      <Part bg="5" md="10" top>
+      <Part bg="5" md="10">
+        <Divider />
         <h2>Related Videos</h2>
         <VideoList
           isLoading={relatedVideos.isLoading}

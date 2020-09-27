@@ -6,11 +6,6 @@ const StyledPart = styled.div`
   margin: 5px;
   text-align: ${(props) => props.align || 'inherit'};
 
-  border-top: ${(props) => (props.top ? '1px solid gray' : 0)};
-  border-bottom: ${(props) => (props.bottom ? '1px solid gray' : 0)};
-  border-left: ${(props) => (props.left ? '1px solid gray' : 0)};
-  border-right: ${(props) => (props.right ? '1px solid gray' : 0)};
-
   @media (max-width: 1280px) {
     width: ${(props) => (parseInt(props.md, 10) * 100) / 12}%;
   }

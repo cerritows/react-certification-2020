@@ -2,26 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 import withLoader from '../Loader';
-
-const VideoContainer = styled.div`
-  width: 100%;
-  height: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: stretch;
-
-  @media (min-width: 1280px) {
-    height: 500px;
-  }
-
-  @media (max-width: 600px) {
-    height: 200px;
-  }
-`;
+import { FavoriteToggle } from '../Favorites';
+import Container, { Divider } from '../Layout';
 
 const VideoFrame = styled.iframe`
   width: 100%;
   flex-grow: 1;
+  height: 600px;
 `;
 
 function VideoDisplay({ data }) {
@@ -29,10 +16,8 @@ function VideoDisplay({ data }) {
   const { title } = data.items[0].snippet;
 
   return (
-    <VideoContainer>
+    <Container direction="column">
       <VideoFrame
-        // width="640"
-        // height="400"
         title={videoId}
         src={`https://www.youtube.com/embed/${videoId}`}
         frameBorder="0"
@@ -40,7 +25,12 @@ function VideoDisplay({ data }) {
         allowFullScreen
       />
       <h2>{title}</h2>
-    </VideoContainer>
+      <Divider />
+      <Container direction="column" align="flex-end">
+        <FavoriteToggle id={videoId} />
+      </Container>
+      <Divider />
+    </Container>
   );
 }
 
