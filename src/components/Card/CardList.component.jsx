@@ -7,7 +7,6 @@ const StyledCardList = styled.div`
   flex-direction: ${(props) => props.theme.listDirection};
   // padding: 3rem;
   align-items: ${(props) => props.theme.alignItems};
-  justify-content: stretch;
 
   @media (max-width: 600px) {
     padding: 0;

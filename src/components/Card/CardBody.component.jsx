@@ -10,6 +10,7 @@ const CardBody = styled.div`
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(0, 0, 0, 0.2);
   background-color: #f7f5f7;
+  justify-content: space-between;
 
   & img {
     max-width: 100%;
