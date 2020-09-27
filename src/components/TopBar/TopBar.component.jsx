@@ -6,9 +6,10 @@ import { BorderlessButton } from '../Button';
 
 import { LabeledIcon, IconLabel, Icon } from '../Icon';
 import { ThemeSelector } from '../Style';
+import { ProfileBadge } from '../Profile';
 
 function TopBar() {
-  const { authenticated, logout } = useAuth();
+  const { authenticated, logout, user } = useAuth();
   const history = useHistory();
 
   const deauthenticate = () => {
@@ -24,8 +25,14 @@ function TopBar() {
         </Link>
       </NavBarItem>
 
-      <NavBarItem>
-        <ThemeSelector align="center" />
+      {authenticated && (
+        <NavBarItem align="left">
+          <ProfileBadge user={user} />
+        </NavBarItem>
+      )}
+
+      <NavBarItem align="left">
+        <ThemeSelector />
       </NavBarItem>
 
       {authenticated ? (
