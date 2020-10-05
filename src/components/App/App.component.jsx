@@ -18,7 +18,7 @@ import TopBar from '../TopBar';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter forceRefresh>
       <AuthProvider>
         <FavoritesProvider>
           <CustomThemeProvider>
