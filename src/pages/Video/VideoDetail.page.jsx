@@ -1,14 +1,15 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useVideoAPI } from '../../utils/hooks';
+import { VideoAPI } from '../../utils/apis';
 
 import { VideoDisplay, VideoList } from '../../components/Video';
 import Container, { Part, Divider } from '../../components/Layout';
 
 function VideoPage() {
   const { id } = useParams();
-  const videoDetails = useVideoAPI('getVideoDetails', id);
-  const relatedVideos = useVideoAPI('getRelatedVideos', id);
+  const videoDetails = useVideoAPI(VideoAPI.getVideoDetails, id);
+  const relatedVideos = useVideoAPI(VideoAPI.getRelatedVideos, id);
 
   return (
     <Container direction="row">

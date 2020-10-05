@@ -2,13 +2,14 @@ import React from 'react';
 
 import { useVideoAPI } from '../../utils/hooks';
 import { useFavorites } from '../../providers/Favorites';
+import { VideoAPI } from '../../utils/apis';
 
 import Container, { Divider, Part } from '../../components/Layout';
 import { VideoList } from '../../components/Video';
 
 function FavoritesPage() {
   const { favorites } = useFavorites();
-  const { isLoading, data } = useVideoAPI('getVideoDetails', favorites.join());
+  const { isLoading, data } = useVideoAPI(VideoAPI.getVideoDetails, favorites.join());
 
   return (
     <Container direction="column">

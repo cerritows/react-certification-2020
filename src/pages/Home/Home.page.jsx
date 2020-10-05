@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import SearchBar from '../../components/Search';
 import { useVideoAPI } from '../../utils/hooks';
+import { VideoAPI } from '../../utils/apis';
 
 import { VideoList } from '../../components/Video';
 import Container, { Part } from '../../components/Layout';
@@ -8,7 +9,7 @@ import Container, { Part } from '../../components/Layout';
 function HomePage() {
   const [searchTerms, setSearchTerms] = useState('');
 
-  const { isLoading, data } = useVideoAPI('searchVideos', searchTerms);
+  const { isLoading, data } = useVideoAPI(VideoAPI.searchVideos, searchTerms);
 
   return (
     <Container align="center" direction="column">
