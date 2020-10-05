@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useAuth } from '../../providers/Auth';
 import { useFavorites } from '../../providers/Favorites';
 
@@ -9,13 +9,13 @@ function FavoriteToggle({ id }) {
   const { authenticated } = useAuth();
   const { favorites, addToFavorites, removeFromFavorites } = useFavorites();
 
-  const addFavorite = () => {
+  const addFavorite = useCallback(() => {
     addToFavorites(id);
-  };
+  }, [id, addToFavorites]);
 
-  const removeFavorite = () => {
+  const removeFavorite = useCallback(() => {
     removeFromFavorites(id);
-  };
+  }, [id, removeFromFavorites]);
 
   return (
     <>
