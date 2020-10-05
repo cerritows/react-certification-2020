@@ -17,10 +17,6 @@ function LoginForm({ onSubmit }) {
 
   return (
     <Container align="center">
-      <Part align="center" bg="8" md="10">
-        <h1>Welcome back</h1>
-      </Part>
-
       <Part bg="6" md="10">
         <form onSubmit={submitForm} className="login-form">
           <InputGroup>
