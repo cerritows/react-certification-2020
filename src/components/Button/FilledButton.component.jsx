@@ -15,7 +15,7 @@ const FilledButton = styled.button`
   justify-content: center;
 
   &:hover {
-    background-color: ${(props) => props.theme.primaryColor};
+    background-color: ${(props) => props.theme.secondaryColor};
     border: 1px solid ${(props) => props.theme.primaryColor};
     color: ${(props) => props.theme.primaryColor};
   }

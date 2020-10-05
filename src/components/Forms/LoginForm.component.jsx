@@ -32,7 +32,7 @@ function LoginForm({ onSubmit }) {
   return (
     <Container align="center">
       <Part bg="6" md="10">
-        <form onSubmit={submitForm} className="login-form">
+        <form onSubmit={submitForm}>
           <InputGroup>
             <InputLabel htmlFor="username">
               <strong>User</strong>
