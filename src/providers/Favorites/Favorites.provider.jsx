@@ -43,8 +43,17 @@ function FavoritesProvider({ children }) {
     [favorites, user]
   );
 
+  const isFavorite = useCallback(
+    (elementToTest) => {
+      return favorites.includes(elementToTest);
+    },
+    [favorites]
+  );
+
   return (
-    <FavoritesContext.Provider value={{ favorites, addToFavorites, removeFromFavorites }}>
+    <FavoritesContext.Provider
+      value={{ favorites, addToFavorites, removeFromFavorites, isFavorite }}
+    >
       {children}
     </FavoritesContext.Provider>
   );

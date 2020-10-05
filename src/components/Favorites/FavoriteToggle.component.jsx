@@ -7,7 +7,7 @@ import { LabeledIcon } from '../Icon';
 
 function FavoriteToggle({ id }) {
   const { authenticated } = useAuth();
-  const { favorites, addToFavorites, removeFromFavorites } = useFavorites();
+  const { addToFavorites, removeFromFavorites, isFavorite } = useFavorites();
 
   const addFavorite = useCallback(() => {
     addToFavorites(id);
@@ -20,7 +20,7 @@ function FavoriteToggle({ id }) {
   return (
     <>
       {authenticated &&
-        (favorites.includes(id) ? (
+        (isFavorite(id) ? (
           <BorderlessButton onClick={removeFavorite}>
             <LabeledIcon name="CheckBox" label="Favorite" size="16" />
           </BorderlessButton>
