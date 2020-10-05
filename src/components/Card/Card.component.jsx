@@ -12,6 +12,12 @@ const Card = styled.div`
   @media (max-width: 600px) {
     width: ${(props) => props.theme.cardSizes.small};
   }
+
+  & a {
+    display: flex;
+    width: 100%;
+    text-decoration: none;
+  }
 `;
 
 export default Card;
