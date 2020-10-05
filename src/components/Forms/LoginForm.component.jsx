@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 
 import Container, { Part } from '../Layout';
 import { InputGroup, InputLabel, TextInput } from '../Input';
@@ -15,6 +15,20 @@ function LoginForm({ onSubmit }) {
     onSubmit(username, password);
   };
 
+  const setFormUsername = useCallback(
+    (event) => {
+      setUsername(event.target.value);
+    },
+    [setUsername]
+  );
+
+  const setFormPassword = useCallback(
+    (event) => {
+      setPassword(event.target.value);
+    },
+    [setPassword]
+  );
+
   return (
     <Container align="center">
       <Part bg="6" md="10">
@@ -22,12 +36,7 @@ function LoginForm({ onSubmit }) {
           <InputGroup>
             <InputLabel htmlFor="username">
               <strong>User</strong>
-              <TextInput
-                required
-                type="text"
-                id="username"
-                onChange={(event) => setUsername(event.target.value)}
-              />
+              <TextInput required type="text" id="username" onChange={setFormUsername} />
             </InputLabel>
           </InputGroup>
 
@@ -38,7 +47,7 @@ function LoginForm({ onSubmit }) {
                 required
                 type="password"
                 id="password"
-                onChange={(event) => setPassword(event.target.value)}
+                onChange={setFormPassword}
               />
             </InputLabel>
           </InputGroup>
