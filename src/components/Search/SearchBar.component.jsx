@@ -9,32 +9,37 @@ import Container, { Part } from '../Layout';
 function SearchBar({ setSearchTerms }) {
   const [searchTerms, setLocalSearchTerms] = useState('');
 
+  const submitForm = (event) => {
+    event.preventDefault();
+    setSearchTerms(searchTerms);
+  };
+
   return (
-    <Container direction="row" align="center">
-      <Part bg="6" md="10">
-        <TextInput
-          value={searchTerms}
-          onChange={(e) => {
-            console.log('Local search', e.target.value);
-            setLocalSearchTerms(e.target.value);
-          }}
-        >
-          <Icon name="Search" size="2rem" />
-        </TextInput>
-      </Part>
-      <Part bg="1" md="10">
-        <FilledButton
-          type="submit"
-          onClick={() => {
-            console.log('Search terms', searchTerms);
-            setSearchTerms(searchTerms);
-          }}
-          outlined
-        >
-          SEARCH
-        </FilledButton>
-      </Part>
-    </Container>
+    <form onSubmit={submitForm} style={{ width: '100%' }}>
+      <Container direction="row" align="center">
+        <Part bg="6" md="10">
+          <TextInput
+            value={searchTerms}
+            onChange={(e) => {
+              setLocalSearchTerms(e.target.value);
+            }}
+          >
+            <Icon name="Search" size="2rem" />
+          </TextInput>
+        </Part>
+        <Part bg="1" md="10">
+          <FilledButton
+            type="submit"
+            onClick={() => {
+              setSearchTerms(searchTerms);
+            }}
+            outlined
+          >
+            SEARCH
+          </FilledButton>
+        </Part>
+      </Container>
+    </form>
   );
 }
 

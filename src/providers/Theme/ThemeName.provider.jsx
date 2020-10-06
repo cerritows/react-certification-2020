@@ -16,7 +16,7 @@ function CustomThemeProvider({ children }) {
   const [theme, setTheme] = useState('defaultTheme');
 
   return (
-    <ThemeContext.Provider value={setTheme}>
+    <ThemeContext.Provider value={{ setTheme }}>
       <ThemeProvider theme={ThemesCatalog[theme].theme}>{children}</ThemeProvider>
     </ThemeContext.Provider>
   );

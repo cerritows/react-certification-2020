@@ -14,12 +14,12 @@ function VideoList({ data, direction }) {
         return (
           <Card element={element} key={videoId}>
             <CardBody>
-              <CardContent>
-                <Link to={`/video/${videoId}`}>
+              <Link to={`/video/${videoId}`}>
+                <CardContent>
                   <img src={element.snippet.thumbnails.high.url} alt="Video preview" />
-                </Link>
-                <CardHeader>{htmlEntities.decode(element.snippet.title)}</CardHeader>
-              </CardContent>
+                  <CardHeader>{htmlEntities.decode(element.snippet.title)}</CardHeader>
+                </CardContent>
+              </Link>
               <CardFooter>
                 <FavoriteToggle id={videoId} />
               </CardFooter>

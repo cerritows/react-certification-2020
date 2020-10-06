@@ -18,7 +18,8 @@ function useAuth() {
 function AuthProvider({ children }) {
   const [authenticated, setAuthenticated] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [user, setUser] = useState('');
+  const [user, setUser] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const lastAuthState = storage.get(AUTH_STORAGE_KEY);
@@ -30,6 +31,7 @@ function AuthProvider({ children }) {
   }, []);
 
   const login = useCallback((username, password) => {
+    setError(null);
     setIsLoading(true);
     AuthAPI.login(username, password).then((data) => {
       if (data.authenticated) {
@@ -37,6 +39,8 @@ function AuthProvider({ children }) {
         setUser(data.user);
         storage.set(AUTH_STORAGE_KEY, true);
         storage.set(USER_STORAGE_KEY, data.user);
+      } else {
+        setError('Invalid username or password');
       }
       setIsLoading(false);
     });
@@ -48,7 +52,9 @@ function AuthProvider({ children }) {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ login, logout, authenticated, isLoading, user }}>
+    <AuthContext.Provider
+      value={{ login, logout, authenticated, isLoading, user, error }}
+    >
       {children}
     </AuthContext.Provider>
   );

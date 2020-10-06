@@ -12,7 +12,7 @@ const Container = styled.div`
 `;
 
 function ThemeSelector() {
-  const setTheme = useTheme();
+  const { setTheme } = useTheme();
 
   const changeTheme = (e) => {
     setTheme(e.target.value);

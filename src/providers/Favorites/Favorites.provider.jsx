@@ -15,22 +15,29 @@ function useFavorites() {
 
 function FavoritesProvider({ children }) {
   const [favorites, setFavorites] = useState([]);
-  const { user, authenticated } = useAuth();
+  const { user } = useAuth();
+
+  const createStorageKey = (userid) => {
+    return userid + FAVORITES_STORAGE_KEY;
+  };
 
   useEffect(() => {
-    if (authenticated) {
-      const savedFavorites = storage.getinsert(user + FAVORITES_STORAGE_KEY, []);
+    if (user) {
+      const savedFavorites = storage.getinsert(createStorageKey(user), []);
       setFavorites(savedFavorites);
     }
-  }, [authenticated, user]);
+  }, [user]);
+
+  useEffect(() => {
+    storage.set(createStorageKey(user), favorites);
+  }, [favorites, user]);
 
   const addToFavorites = useCallback(
     (newFavorite) => {
       const newFavorites = [...favorites, newFavorite];
       setFavorites(newFavorites);
-      storage.set(user + FAVORITES_STORAGE_KEY, newFavorites);
     },
-    [favorites, user]
+    [favorites]
   );
 
   const removeFromFavorites = useCallback(
@@ -38,13 +45,21 @@ function FavoritesProvider({ children }) {
       const currentFavs = [...favorites];
       currentFavs.splice(currentFavs.indexOf(favoriteToRemove), 1);
       setFavorites(currentFavs);
-      storage.set(user + FAVORITES_STORAGE_KEY, currentFavs);
     },
-    [favorites, user]
+    [favorites]
+  );
+
+  const isFavorite = useCallback(
+    (elementToTest) => {
+      return favorites.includes(elementToTest);
+    },
+    [favorites]
   );
 
   return (
-    <FavoritesContext.Provider value={{ favorites, addToFavorites, removeFromFavorites }}>
+    <FavoritesContext.Provider
+      value={{ favorites, addToFavorites, removeFromFavorites, isFavorite }}
+    >
       {children}
     </FavoritesContext.Provider>
   );
